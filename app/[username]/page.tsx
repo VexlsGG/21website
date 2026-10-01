@@ -16,17 +16,17 @@ import Footer from "../../components/Footer";
 import { MediaPreview } from "../../components/MediaPreview";
 
 export default function ProfilePage({
-  params,
+  params: paramsPromise,
 }: {
   params: Promise<{ username: string }>;
 }) {
-  const { username } = use(params);
+  const params = use(paramsPromise);
 
   return (
     <div className="font-sans bg-background text-foreground">
       <Navbar />
       <main className="flex flex-col gap-0">
-        <Hero username={username} />
+        <Hero username={params.username} />
         <About />
         {/* <RosterPreview /> */}
         <MediaPreview />
