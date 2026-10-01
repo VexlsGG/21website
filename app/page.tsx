@@ -1,45 +1,24 @@
-"use client";
-import { JoinTheSquad } from "../components/JoinTheSquad";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-
-import About from "../components/About";
-import Roster from "../components/Roster";
-import Media from "../components/Media";
-import Partners from "../components/Partners";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-// import { RosterPreview } from "../components/RosterPreview";
-import { MediaPreview } from "../components/MediaPreview";
+import Link from "next/link";
+import { GlassPanel } from "@/components/GlassPanel";
 
 export default function Home() {
   return (
-    <div className="font-sans bg-background text-foreground">
-      <Navbar />
-      <main className="flex flex-col gap-0">
-        <Hero />
-        <About />
-        {/* <RosterPreview /> */}
-        <MediaPreview />
-        <JoinTheSquad />
-        <Roster />
-        <Media />
-        <Partners />
-        <Contact />
-      </main>
-      <div className="flex justify-center my-8">
-        <a
-          href="https://discord.gg/CNPSjuhw"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-600 hover:to-blue-600 transition text-lg flex items-center gap-2"
+    <div className="min-h-screen flex items-center justify-center bg-black px-4">
+      <GlassPanel className="max-w-md w-full text-center space-y-6">
+        <h1 className="text-3xl font-bold text-white tracking-tight">
+          Welcome to Team 21
+        </h1>
+        <p className="text-slate-300 text-sm leading-relaxed">
+          Profile pages are live. Open a demo profile to see dynamic routing in
+          action.
+        </p>
+        <Link
+          href="/vexlsgg"
+          className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:from-cyan-600 hover:to-blue-600 transition shadow-lg"
         >
-          <i className="fab fa-discord text-2xl"></i>
-          Join our Discord
-        </a>
-      </div>
-      <Footer />
+          View Demo Profile
+        </Link>
+      </GlassPanel>
     </div>
   );
 }
