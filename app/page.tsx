@@ -1,45 +1,22 @@
-"use client";
-import { JoinTheSquad } from "../components/JoinTheSquad";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-
-import About from "../components/About";
-import Roster from "../components/Roster";
-import Media from "../components/Media";
-import Partners from "../components/Partners";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-// import { RosterPreview } from "../components/RosterPreview";
-import { MediaPreview } from "../components/MediaPreview";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans bg-background text-foreground">
-      <Navbar />
-      <main className="flex flex-col gap-0">
-        <Hero />
-        <About />
-        {/* <RosterPreview /> */}
-        <MediaPreview />
-        <JoinTheSquad />
-        <Roster />
-        <Media />
-        <Partners />
-        <Contact />
-      </main>
-      <div className="flex justify-center my-8">
-        <a
-          href="https://discord.gg/CNPSjuhw"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:from-cyan-600 hover:to-blue-600 transition text-lg flex items-center gap-2"
-        >
-          <i className="fab fa-discord text-2xl"></i>
-          Join our Discord
-        </a>
-      </div>
-      <Footer />
-    </div>
+    <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
+      <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight text-center mb-10">
+        Welcome to VibeLink
+      </h1>
+      <Link
+        href="/vexlsgg"
+        className="px-8 py-4 rounded-2xl text-white font-semibold tracking-wide
+          bg-white/10 backdrop-blur-md border border-cyan-300/40
+          shadow-[0_0_28px_rgba(0,255,247,0.55),0_0_60px_rgba(0,186,255,0.25)]
+          hover:bg-white/15 hover:border-cyan-200/70
+          hover:shadow-[0_0_40px_rgba(0,255,247,0.8),0_0_80px_rgba(0,186,255,0.35)]
+          transition duration-300"
+      >
+        View Demo Profile
+      </Link>
+    </main>
   );
 }

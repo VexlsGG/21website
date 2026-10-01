@@ -14,12 +14,13 @@ const Team21Logo3D = dynamic(() => import("./ThreeDBg/Team21Logo3D"), {
   ),
 });
 
-export default function Hero() {
+export default function Hero({ username }: { username?: string }) {
   const [showModal, setShowModal] = useState(false);
   const gradientRef = useAnimatedGradientBackground(
     ["#00fff7", "#00baff", "#ff00e0", "#00fff7", "#171717"],
     8000
   );
+  const displayName = username ? username.toUpperCase() : "TEAM 21";
   return (
     <section
       id="home"
@@ -46,7 +47,7 @@ export default function Hero() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.7 }}
         >
-          TEAM 21
+          {displayName}
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl font-body text-neon-cyan text-center max-w-2xl drop-shadow-neon"
